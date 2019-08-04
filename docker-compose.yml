@@ -14,7 +14,7 @@ services:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
 
   rancher-server:
-    image: rancher/server:1.6.28
+    image: rancher/server
     container_name: rancher-server
     restart: unless-stopped
     ports:
