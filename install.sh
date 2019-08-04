@@ -14,12 +14,12 @@ clear
 # ./certbot-auto certonly
 #exit
 
-sudo su -
-mkdir -p /etc/letsencrypt/live/rancher.lab
+cert_path="~/rancher-server-dev/letsencrypt/live/rancher.lab"
+mkdir -p $cert_path
 
-openssl req -x509 -out /etc/letsencrypt/live/rancher.lab/privkey.pem -keyout /etc/letsencrypt/live/rancher.lab/fullchain.pem   -newkey rsa:2048 -nodes -sha256   -subj '/CN=rancher-lab' -extensions EXT -config <( \ 
+openssl req -x509 -out $cert_path/privkey.pem -keyout $cert_path/fullchain.pem   -newkey rsa:2048 -nodes -sha256   -subj '/CN=rancher-lab' -extensions EXT -config <( \ 
    printf "[dn]\nCN=rancher.lab\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:rancher.lab\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
-exit
+
 
 echo -n "Enter your rancher password and press [ENTER]: "
 read MYSQL_ROOT_PASSWORD
