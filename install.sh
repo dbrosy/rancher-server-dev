@@ -14,8 +14,8 @@ clear
 # ./certbot-auto certonly
 #exit
 
-mkdir -p certs
-openssl req -x509 -out certs/privkey.pem -keyout certs/fullchain.pem   -newkey rsa:2048 -nodes -sha256   -subj '/CN=rancher-lab' -extensions EXT -config <( \ 
+mkdir -p /etc/letsencrypt/live/rancher.lab
+openssl req -x509 -out /etc/letsencrypt/live/rancher.lab/privkey.pem -keyout /etc/letsencrypt/live/rancher.lab/fullchain.pem   -newkey rsa:2048 -nodes -sha256   -subj '/CN=rancher-lab' -extensions EXT -config <( \ 
    printf "[dn]\nCN=rancher.lab\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:rancher.lab\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
 
 
