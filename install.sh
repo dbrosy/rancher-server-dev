@@ -2,17 +2,18 @@
 
 clear
 
-echo "Installer: Certbot"
-sudo su -
-wget https://dl.eff.org/certbot-auto
-chmod a+x certbot-auto
+#echo "Installer: Certbot"
+#sudo su -
+#wget https://dl.eff.org/certbot-auto
+#chmod a+x certbot-auto
 #./certbot-auto
-mv certbot-auto /usr/local/bin
-certbot-auto --noninteractive --os-packages-only
+#mv certbot-auto /usr/local/bin
+#certbot-auto --noninteractive --os-packages-only
 
-echo "Configure: Certbot"
+#echo "Configure: Certbot"
 # ./certbot-auto certonly
-exit
+#exit
+
 echo -n "Enter your rancher password and press [ENTER]: "
 read MYSQL_ROOT_PASSWORD
 echo $MYSQL_ROOT_PASSWORD
