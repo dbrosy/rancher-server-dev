@@ -14,7 +14,7 @@ clear
 # ./certbot-auto certonly
 #exit
 
-cert_path="~/rancher-server-dev/letsencrypt/live/rancher.lab"
+cert_path="../rancher-server-dev/letsencrypt/live/rancher.lab"
 mkdir -p $cert_path
 
 openssl req -x509 -out $cert_path/privkey.pem -keyout $cert_path/fullchain.pem \
